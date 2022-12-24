@@ -6,7 +6,7 @@
 #    By: hrinka <hrinka@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 12:26:19 by hrinka            #+#    #+#              #
-#    Updated: 2022/12/20 12:29:06 by hrinka           ###   ########.fr        #
+#    Updated: 2022/12/24 14:01:23 by hrinka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ $(NAME):	$(OBJ)
 			@mv libft.a $(NAME)
 			@$(AR) $(NAME) $(OBJ)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c| $(OBJF)
 			@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 $(OBJF):

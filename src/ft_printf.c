@@ -6,7 +6,7 @@
 /*   By: hrinka <hrinka@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:25:44 by hrinka            #+#    #+#             */
-/*   Updated: 2022/12/20 12:25:58 by hrinka           ###   ########.fr       */
+/*   Updated: 2022/12/20 13:33:25 by hrinka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,24 @@ int	ft_printchar(int c)
 	return (1);
 }
 
-int	ft_formats(va_list args, const char format)
+int	ft_fmts(va_list args, const char fmt)
 {
 	int	print_length;
 
 	print_length = 0;
-	if (format == 'c')
+	if (fmt == 'c')
 		print_length += ft_printchar(va_arg(args, int));
-	else if (format == 's')
+	else if (fmt == 's')
 		print_length += ft_printstr(va_arg(args, char *));
-	else if (format == 'p')
+	else if (fmt == 'p')
 		print_length += ft_print_ptr(va_arg(args, unsigned long long));
-	else if (format == 'd' || format == 'i')
+	else if (fmt == 'd' || fmt == 'i')
 		print_length += ft_printnbr(va_arg(args, int));
-	else if (format == 'u')
+	else if (fmt == 'u')
 		print_length += ft_print_unsigned(va_arg(args, unsigned int));
-	else if (format == 'x' || format == 'X')
-		print_length += ft_print_hex(va_arg(args, unsigned int), format);
-	else if (format == '%')
+	else if (fmt == 'x' || fmt == 'X')
+		print_length += ft_print_hex(va_arg(args, unsigned int), fmt);
+	else if (fmt == '%')
 		print_length += ft_printpercent();
 	return (print_length);
 }
@@ -53,7 +53,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			print_length += ft_formats(args, str[i + 1]);
+			print_length += ft_fmts(args, str[i + 1]);
 			i++;
 		}
 		else
