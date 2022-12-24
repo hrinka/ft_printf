@@ -6,7 +6,7 @@
 /*   By: hrinka <hrinka@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:25:44 by hrinka            #+#    #+#             */
-/*   Updated: 2022/12/20 13:33:25 by hrinka           ###   ########.fr       */
+/*   Updated: 2022/12/24 20:01:19 by hrinka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,12 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (print_length);
+}
+
+#include "stdio.h"
+
+int	main(void)
+{
+	printf(" %c %c %c ", '0', 0, '1');
+	ft_printf(" %c %c %c ", '0', 0, '1');
 }
