@@ -6,7 +6,7 @@
 /*   By: hrinka <hrinka@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:35:25 by hrinka            #+#    #+#             */
-/*   Updated: 2022/12/20 13:33:17 by hrinka           ###   ########.fr       */
+/*   Updated: 2022/12/24 22:02:41 by hrinka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 
 int		ft_printf(const char *fmt, ...);
-int		ft_fmts(va_list args, const char fmt);
+int		ft_fmts(va_list *zargs, const char fmt);
 int		ft_printchar(int c);
 int		ft_printstr(char *str);
 int		ft_print_ptr(unsigned long long ptr);

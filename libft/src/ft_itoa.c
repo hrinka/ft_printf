@@ -6,11 +6,12 @@
 /*   By: hrinka <hrinka@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:52:31 by hrinka            #+#    #+#             */
-/*   Updated: 2022/12/24 14:17:59 by hrinka           ###   ########.fr       */
+/*   Updated: 2022/12/24 22:03:04 by hrinka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 
 static int	ft_digit_count(int n)
 {
@@ -31,29 +32,70 @@ char	*ft_itoa(int n)
 {
 	char			*str;
 	size_t			i;
-	unsigned int	nb;
 
-	nb = n;
-	i = ft_digit_count(nb);
+	i = ft_digit_count(n);
 	str = (char *)malloc(sizeof(char) * (i + 1));
 	if (!str)
 		return (NULL);
 	str[i] = '\0';
 	i--;
-	if (nb < 0)
-	{
+	if (n < 0)
 		str[0] = '-';
-		nb = nb * -1;
-	}
-	else if (nb == 0)
+	else if (n == 0)
 		str[0] = '0';
-	while (nb > 0)
+	while (n != 0)
 	{
-		str[i--] = nb % 10 + '0';
-		nb = nb / 10;
+		if (n > 0)
+			str[i--] = n % 10 + '0';
+		else
+			str[i--] = (n % 10) * -1 + '0';
+		n = n / 10;
 	}
 	return (str);
 }
+// static int	ft_digit_count(int n)
+// {
+// 	size_t	i;
+
+// 	i = 0;
+// 	if (n <= 0)
+// 		i++;
+// 	while (n != 0)
+// 	{
+// 		n /= 10;
+// 		i++;
+// 	}
+// 	return (i);
+// }
+
+// char	*ft_itoa(int n)
+// {
+// 	char			*str;
+// 	size_t			i;
+// 	unsigned int	nb;
+
+// 	nb = n;
+// 	i = ft_digit_count(nb);
+// 	str = (char *)malloc(sizeof(char) * (i + 1));
+// 	if (!str)
+// 		return (NULL);
+// 	str[i] = '\0';
+// 	i--;
+// 	if (nb < 0)
+// 	{
+// 		str[0] = '-';
+// 		nb = nb * -1;
+// 	}
+// 	else if (nb == 0)
+// 		str[0] = '0';
+// 	while (nb > 0)
+// 	{
+// 		str[i--] = nb % 10 + '0';
+// 		nb = nb / 10;
+// 	}
+// 	return (str);
+// }
+
 // #include <stdio.h>
 // int	main(void)
 // {

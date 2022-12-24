@@ -6,7 +6,7 @@
 /*   By: hrinka <hrinka@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:25:37 by hrinka            #+#    #+#             */
-/*   Updated: 2022/12/20 13:33:28 by hrinka           ###   ########.fr       */
+/*   Updated: 2022/12/24 21:35:49 by hrinka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,5 @@ int	ft_printnbr(int n)
 
 int	ft_printpercent(void)
 {
-	write(1, "%", 1);
-	return (1);
+	return (write(1, "%", 1));
 }

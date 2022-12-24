@@ -6,17 +6,18 @@
 #    By: hrinka <hrinka@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 12:26:19 by hrinka            #+#    #+#              #
-#    Updated: 2022/12/24 20:41:23 by hrinka           ###   ########.fr        #
+#    Updated: 2022/12/24 21:55:55 by hrinka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libftprintf.a
-INCLUDE		= include
+INCLUDE		=  -I include
 LIBFT		= libft
 SRC_DIR		= src/
 OBJ_DIR		= obj/
 CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra -I
+CFLAGS		= -Wall -Werror -Wextra
+TESTFLAGS	= -fsanitize=address -fsanitize=undefined
 RM			= rm -f
 AR			= ar rcs
 
@@ -55,5 +56,9 @@ fclean:		clean
 			@$(RM) -f $(LIBFT)/libft.a
 
 re:			fclean all
+
+test:		re
+			@$(CC) $(CFLAGS) $(INCLUDE) $(TESTFLAGS)  $(LIBFT)/libft.a $(OBJ)  -o printf
+			./printf
 
 .PHONY:		all clean fclean re
