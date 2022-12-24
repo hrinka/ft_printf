@@ -6,12 +6,11 @@
 /*   By: hrinka <hrinka@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 16:52:31 by hrinka            #+#    #+#             */
-/*   Updated: 2022/12/24 22:03:04 by hrinka           ###   ########.fr       */
+/*   Updated: 2022/12/24 22:07:55 by hrinka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 static int	ft_digit_count(int n)
 {

@@ -6,7 +6,7 @@
 /*   By: hrinka <hrinka@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:35:25 by hrinka            #+#    #+#             */
-/*   Updated: 2022/12/24 22:02:41 by hrinka           ###   ########.fr       */
+/*   Updated: 2022/12/24 22:10:35 by hrinka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdarg.h>
 # include <unistd.h>
+# include <limits.h>
 
 int		ft_printf(const char *fmt, ...);
 int		ft_fmts(va_list *zargs, const char fmt);
