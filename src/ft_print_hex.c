@@ -6,7 +6,7 @@
 /*   By: hrinka <hrinka@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:25:22 by hrinka            #+#    #+#             */
-/*   Updated: 2022/12/20 12:39:31 by hrinka           ###   ########.fr       */
+/*   Updated: 2022/12/31 15:00:56 by hrinka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	ft_hex_len(unsigned	int num)
 {
 	int	len;
 
-	len = 0;
-	while (num != 0)
+	len = 1;
+	while (num / 16 != 0)
 	{
 		len++;
 		num = num / 16;

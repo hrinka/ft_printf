@@ -6,7 +6,7 @@
 /*   By: hrinka <hrinka@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:25:44 by hrinka            #+#    #+#             */
-/*   Updated: 2022/12/24 22:09:33 by hrinka           ###   ########.fr       */
+/*   Updated: 2022/12/31 17:27:54 by hrinka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int	ft_printchar(int c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
 
 int	ft_fmts(va_list *args, const char fmt)
@@ -69,6 +68,7 @@ int	ft_printf(const char *str, ...)
 	return (print_length);
 }
 
+// #include <stdint.h>
 // #include "stdio.h"
 // int	main(void)
 // {
@@ -79,8 +79,8 @@ int	ft_printf(const char *str, ...)
 // 	printf("%c\t%c\n\n", 'c', '%');
 
 // 	printf("#str\n");
-// 	ft_printf("%s\t%s\t%s\n", "42Tokyo", "", NULL);
-// 	printf("%s\t%s\n\n", "42Tokyo", "");
+// 	ft_printf("%s\t%s\n", "42Tokyo", "");
+// 	printf("%s\t%s", "42Tokyo", "");
 
 // 	printf("#int\n");
 // 	ft_printf("%d\t%d\t%d\t%d\n", i, 100, INT_MAX, INT_MIN);
@@ -91,17 +91,18 @@ int	ft_printf(const char *str, ...)
 // 	printf("%u\t%u\t%u\n\n", i, 100, UINT_MAX);
 
 // 	printf("#hex\n");
-// 	printf("%x\t%x\t%x\n", i, 255, UINT_MAX);
+// 	ft_printf("%x\t%x\t%x\n", i, 255, UINT_MAX);
 // 	printf("%x\t%x\t%x\n\n", i, 255, UINT_MAX);
 
 // 	printf("#HEX\n");
-// 	printf("%x\t%X\t%X\n", i, 255, UINT_MAX);
+// 	ft_printf("%x\t%X\t%X\n", i, 255, UINT_MAX);
 // 	printf("%x\t%X\t%X\n\n", i, 255, UINT_MAX);
 
 // 	printf("#ptr\n");
-// 	ft_printf("%p\t%p\t%p\t%p\n", &i, SIZE_MAX, NULL, 0);
-// 	printf("%p\t%p\n\n", &i, NULL);
+// 	ft_printf("%p\t%lu\t%p\n", &i, UINTPTR_MAX, NULL);
+// 	printf("%p\t%lu\t%p\n", &i, UINTPTR_MAX, NULL);
 
 // 	printf("#percent\n");
 // 	ft_printf("%%\n");
-// 	printf("%%\n\n");
+// 	printf("%%\n");
+// }

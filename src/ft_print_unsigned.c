@@ -6,7 +6,7 @@
 /*   By: hrinka <hrinka@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 12:25:03 by hrinka            #+#    #+#             */
-/*   Updated: 2022/12/20 12:25:05 by hrinka           ###   ########.fr       */
+/*   Updated: 2022/12/31 15:02:31 by hrinka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_uitoa(unsigned int n)
 	len = ft_num_len(n);
 	num = (char *)malloc(sizeof(char) * (len + 1));
 	if (!num)
-		return (0);
+		return (NULL);
 	num[len] = '\0';
 	while (n != 0)
 	{
